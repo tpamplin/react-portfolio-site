@@ -7,31 +7,37 @@ export const StarBackground = () => {
     useEffect(() => {
 
             generateStars();
-            window.addEventListener('resize', generateStars);
             generateMeteors();
-            window.addEventListener('resize', generateMeteors);
+
+            const handleResize = () => {
+                generateStars();
+                generateMeteors();
+            }
+
+            window.addEventListener('resize', handleResize);
+
+
 
         return () => {
             // Cleanup event listeners
-            window.removeEventListener('resize', generateStars);
-            window.removeEventListener('resize', generateMeteors);
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
     const generateStars = () => {
 
-        const numberOfStars = Math.floor(window.innerWidth * window.innerHeight / 5000);
+        const numberOfStars = Math.floor(window.innerWidth * window.innerHeight / 3000);
          
         const newStars = [];
 
         for (let i = 0; i < numberOfStars; i++) {
             newStars.push({
                 id: i,
-                size: Math.random() * 3 + 1 ,
+                size: Math.random() * 2 + 1 ,
                 x: Math.random() * 100,
                 y: Math.random() * 100,
                 opacity: Math.random() * 0.5 + 0.5,
-                animationDuration: Math.random() * 4 + 2,
+                animationDuration: Math.random() * 1 + 1,
             });
         }
         setStars(newStars);
