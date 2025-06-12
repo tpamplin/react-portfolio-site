@@ -9,9 +9,12 @@ export const StarBackground = () => {
             generateStars();
             window.addEventListener('resize', generateStars);
             generateMeteors();
+            window.addEventListener('resize', generateMeteors);
+
         return () => {
             // Cleanup event listeners
             window.removeEventListener('resize', generateStars);
+            window.removeEventListener('resize', generateMeteors);
         };
     }, []);
 
@@ -36,16 +39,16 @@ export const StarBackground = () => {
 
     const generateMeteors = () => {
 
-        const numberOfMeteors = 8;
+        const numberOfMeteors = 32;
         const newMeteors = [];
         for (let i = 0; i < numberOfMeteors; i++) {
             newMeteors.push({
                 id: i,
                 size: Math.random() * 2 + 1,
-                x: Math.random() * 100,
-                y: Math.random() * 50,
-                delay: Math.random() * 15,
-                animationDuration: Math.random() * 3 + 3,
+                x: (Math.random() * 150) - 50,
+                y: (Math.random() * 150) - 50,
+                delay: Math.random() * 300 + 15,
+                animationDuration: Math.random() * 30 + 15,
             });
         }
         setMeteors(newMeteors);
@@ -65,10 +68,11 @@ export const StarBackground = () => {
         ))}
         {meteors.map((meteor) => (
             <div key={meteor.id} className="meteor animate-meteor" style={{
-                width: `${meteor.size}px`,
-                height: `${meteor.size}px`,
+                width: `${meteor.size + 50}px`,
+                height: `${meteor.size * 2}px`,
                 left: `${meteor.x}%`,
                 top: `${meteor.y}%`,
+                opacity:0,
                 animationDelay: `${meteor.delay}s`,
                 animationDuration: `${meteor.animationDuration}s`
             }}/>
