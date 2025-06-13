@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 
 
-export const ThemeToggle = () => {
+export const ThemeToggle = ({state}) => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect (() => {
@@ -38,7 +38,10 @@ export const ThemeToggle = () => {
     }
 
     return (
-        <button onClick={toggleTheme} className={cn("fixed top-5 right-5 z-50 p-2 rounded-full", 
+        <>
+        {
+        (state === "desktop") ? (
+            <button onClick={toggleTheme} className={cn("fixed top-5 right-5 z-50 p-2 rounded-full", 
             "transition-colors duration-300 foxus:outline-hidden",
             isDarkMode ? "bg-gray-800 text-white hover:bg-gray-700" : "bg-white text-gray-800 hover:bg-gray-200"
         )}>
@@ -49,5 +52,16 @@ export const ThemeToggle = () => {
                 <Moon className="h-6 w-6 text-blue-900"/> 
             )}
         </button>
+        ) : (
+            <button onClick={toggleTheme} className="p-2 rounded-full focus:outline-hidden mx-auto">
+                {isDarkMode ? (
+                    <Sun className="h-6 w-6 text-yellow-300"/>
+                ) : (
+                    <Moon className="h-6 w-6 text-blue-900"/> 
+                )}
+            </button>
+        )
+        }
+    </>
     ) 
 }

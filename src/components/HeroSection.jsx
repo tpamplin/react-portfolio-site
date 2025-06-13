@@ -21,8 +21,8 @@ export const HeroSection = () => {
                     </div>
                 </div>
 
-                <div className="absolute opacity-0 bottom-8 left-1/2 tranform-translate-x-1/2 flex flex-col items-center  animate-fade-in-delay-5">
-                    <div className="animate-bounce ">
+                <div className="absolute mx-auto opacity-0 bottom-8 left-1/2 tranform -translate-x-1/2 flex flex-col items-center animate-fade-in-delay-5">
+                    <div className="animate-bounce mx-auto items-center">
                         <span className="text-small text-muted-foreground mb-2"> Scroll </span>
                         <ArrowDown className="h-5 w-5 text-primary mx-auto mt-3" />
                     </div>  

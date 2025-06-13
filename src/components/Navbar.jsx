@@ -31,16 +31,17 @@ export const Navbar = () => {
         <nav className={cn("fixed w-full z-40 transition-all duration-300 px-10", 
             isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
         )}>
-            <div className=" container flex items-center justify-between">
-                <a href="#hero" className="text-xl font-bold text-primary flex items-center">
-                    <span className="relative z-10">
-                        <span className="text-glow text-foreground">TimTech </span> {" "} Portfolio
-                    </span>
-                </a>
+            <div className=" container flex md:grid md:grid-cols-4 items-center justify-between">
 
                 {/* desktop navigation */}
 
-                <div className="hidden md:flex space-x-8">
+                <a href="#hero" className="hidden md:flex text-xl font-bold text-primary flex items-center">
+                    <span className="relative z-10 ">
+                        <span className="text-glow text-foreground">Tim's </span> {" "} Portfolio
+                    </span>
+                </a>
+
+                <div className="hidden md:flex col-span-2 justify-between" >
                     {navItems.map((item, key) => (
                         <a
                             key={key}
@@ -54,16 +55,22 @@ export const Navbar = () => {
                 </div>
 
                 <div className="hidden md:flex space-x-6">
-                    <ThemeToggle />
+                    <ThemeToggle  state={"desktop"}/>
                 </div>
 
 
 
                 {/* mobile navigation */}
 
+                <a href="#hero" className="md:hidden text-xl font-bold text-primary absolute left-1/2 transform -translate-x-1/2 top-5">
+                    <span className="relative z-10 ">
+                        <span className="text-glow text-foreground">Tim's </span> {" "} Portfolio
+                    </span>
+                </a>
+
                 <button 
                     onClick={() => setIsMenuOpen(prev => !prev)} 
-                    className="md:hidden p-2 text-foreground z-50"
+                    className="md:hidden p-2 text-foreground z-50 absolute top-3 right-3"
                     aria-label= {isMenuOpen ? "Close menu" : "Open menu"}
                 > 
                     {isMenuOpen ? <X size="24" /> : <Menu size={24} /> }
@@ -84,7 +91,7 @@ export const Navbar = () => {
                                     {item.name}
                                 </a>
                             ))}
-                        <ThemeToggle />
+                        <ThemeToggle state={"mobile"}/>
 
                     </div>
                 </div>
