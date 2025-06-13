@@ -17,6 +17,7 @@
     --animate-fade-in-delay-2: fade-in 2s ease-out 1s forwards;
     --animate-fade-in-delay-3: fade-in 2s ease-out 1.5s forwards;
     --animate-fade-in-delay-4: fade-in 2s ease-out 3s forwards;
+    --animate-fade-in-delay-5: fade-in 1s ease-out 5s forwards;
     --animate-meteor: meteor 5s linear infinite;
 
     @keyframes float {
