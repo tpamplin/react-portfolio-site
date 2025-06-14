@@ -1,8 +1,25 @@
 import { Mail, MapPin, Phone, Linkedin, Github, Send } from "lucide-react"
 import { cn } from "@/lib/utils";
+import { useToast } from "@/hooks/use-toast"
+import { useState } from "react";
 
 export const ContactSection = () => {
 
+    const {toast} = useToast();
+    
+    const [isSubmitted, setIsSubmitted] = useState(false)
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        setTimeout(() => {
+            toast({
+                title: "Message sent!",
+                description: "Thank you for your message!",
+            });
+
+        }, 1500)
+    }
 
     return (
         <section id="contact" className="py-24 px-4 relative bg-secondary/30">
@@ -79,7 +96,7 @@ export const ContactSection = () => {
                     <div className="space-y-6 md:mx-8 bg-primary/10 rounded-[8px] justify-around">
                         <h3 className="space-y-6 my-3 text-primary font-semibold"> Send Me A Message </h3>
 
-                        <form className="space-y-6">
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <div className="mx-4">
                                 <label htmlFor="name" className="block text-sm font-medium mb-2"> {" "}Your Name</label>
                                 <input 

@@ -73,14 +73,6 @@ const projects = [
 
 export const ProjectsSection = () => {
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        
-        setTimeout(() => {
-
-        }, 1500)
-    }
-
     return (
         <section id="projects" className="py-24 px-4 relative">
             <div className="container mx-auto max-w-5xl">
