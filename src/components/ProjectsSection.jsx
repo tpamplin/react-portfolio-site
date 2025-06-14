@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Github, Eye, ArrowDownToLine} from "lucide-react";
+import { Github, Eye, ArrowDownToLine, SquareArrowOutUpRight} from "lucide-react";
 
 const projects = [
     {
@@ -132,6 +132,13 @@ export const ProjectsSection = () => {
 
                         </div>
                     ))}
+                </div>
+
+                <div className="text-center mt-12 flex justify-around">
+                    <a href="https://github.com/tpamplin" target="_blank" className="cosmic-button flex">
+                        My Github <SquareArrowOutUpRight  className="h-6 w-6 ml-2"/>
+                    </a>
+
                 </div>
 
             </div>
