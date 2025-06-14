@@ -10,12 +10,14 @@ export const ContactSection = () => {
 
     const {toast} = useToast();
     
-    const [isSubmitted, setIsSubmitted] = useState(false)
+    const [isSubmitting, setIsSubmitting] = useState(false)
 
     const form = useRef();
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        setIsSubmitting(true);
 
         emailjs.sendForm(import.meta.env.VITE_EMAIL_SERVICE, import.meta.env.VITE_TEMPLATE_ID, form.current , import.meta.env.VITE_PUBLIC_KEY)
             .then((result) => {
@@ -23,19 +25,17 @@ export const ContactSection = () => {
                 toast({
                     title: "Message sent!",
                     description: "Thank you for your message!",
+                    
                 });
+                setIsSubmitting(false);
             }, (error) => {
                 console.log(error.text)
                 toast({
                    title: "Error!",
                    description: error.text,
                 });
+                setIsSubmitting(false);
             });
-
-        setTimeout(() => {
-
-
-        }, 1500)
     }
 
     return (
@@ -149,7 +149,7 @@ export const ContactSection = () => {
                                 />                        
                             </div>
 
-                            <button type="submit" className={cn("cosmic-button items-center flex m-auto mb-2 gap-2 justify-center")}> Send </button>
+                            <button disabled={isSubmitting} type="submit" className={cn("cosmic-button items-center flex m-auto mb-2 gap-2 justify-center")}> {isSubmitting ? "Sending..." : "Send Message"} </button>
                         </form>
 
                     </div>
