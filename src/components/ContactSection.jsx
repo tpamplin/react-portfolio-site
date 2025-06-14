@@ -1,7 +1,10 @@
 import { Mail, MapPin, Phone, Linkedin, Github, Send } from "lucide-react"
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast"
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser"
+
+import dotenv from 'dotenv';
 
 export const ContactSection = () => {
 
@@ -9,14 +12,28 @@ export const ContactSection = () => {
     
     const [isSubmitted, setIsSubmitted] = useState(false)
 
+    const form = useRef();
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-        setTimeout(() => {
-            toast({
-                title: "Message sent!",
-                description: "Thank you for your message!",
+
+        emailjs.sendForm(import.meta.env.VITE_EMAIL_SERVICE, import.meta.env.VITE_TEMPLATE_ID, form.current , import.meta.env.VITE_PUBLIC_KEY)
+            .then((result) => {
+                console.log(result.text);
+                toast({
+                    title: "Message sent!",
+                    description: "Thank you for your message!",
+                });
+            }, (error) => {
+                console.log(error.text)
+                toast({
+                   title: "Error!",
+                   description: error.text,
+                });
             });
+
+        setTimeout(() => {
+
 
         }, 1500)
     }
@@ -96,7 +113,7 @@ export const ContactSection = () => {
                     <div className="space-y-6 md:mx-8 bg-primary/10 rounded-[8px] justify-around">
                         <h3 className="space-y-6 my-3 text-primary font-semibold"> Send Me A Message </h3>
 
-                        <form className="space-y-6" onSubmit={handleSubmit}>
+                        <form ref={form} className="space-y-6" onSubmit={handleSubmit}>
                             <div className="mx-4">
                                 <label htmlFor="name" className="block text-sm font-medium mb-2"> {" "}Your Name</label>
                                 <input 

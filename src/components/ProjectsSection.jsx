@@ -95,8 +95,8 @@ export const ProjectsSection = () => {
                                 <img  src={project.image} alt={`a screenshot from the ${project.title} project`} />
                             </div>
                             <div className="flex justify-around">
-                                {project.tags.map((tag) => (
-                                    <div className="bg-primary rounded-lg flex m-1 shadow-s hover:bg-secondary">
+                                {project.tags.map((tag, key) => (
+                                    <div key={key} className="bg-primary rounded-lg flex m-1 shadow-s hover:bg-secondary">
                                         <div className="my-auto px-2 py-1 mx-auto">{tag}</div>
                                     </div>
                                 ))}
