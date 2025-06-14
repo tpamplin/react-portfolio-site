@@ -8,7 +8,7 @@ export const AboutSection = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
                     About <span className="text-primary"> Me</span>
                 </h2>
-                <img src="tim-pamplin-portrait.jpg" alt="A picture of me." className="rounded-full border border-primary border-5 m-auto  mb-10 w-75" />
+                <img src="/tim-pamplin-portrait.jpg" alt="A picture of me." className="rounded-full border border-primary border-5 m-auto  mb-10 w-75" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
                         <h3 className="text-2xl font-semibold">Passionate Full-Stack Web Developer</h3>
