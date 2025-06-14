@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Linkedin } from "lucide-react"
+import { Mail, MapPin, Phone, Linkedin, Github } from "lucide-react"
 
 export const ContactSection = () => {
 
@@ -16,7 +16,7 @@ export const ContactSection = () => {
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div className="space-y-6 mx-16 bg-primary/10 rounded-[8px] justify-around">
+                    <div className="space-y-6 md:mx-8 bg-primary/10 rounded-[8px] justify-around">
                         <h3 className="space-y-6 my-3 text-primary font-semibold"> Contact Information </h3>
                         
                         <div className="space-y-6 mx-auto ">
@@ -52,18 +52,70 @@ export const ContactSection = () => {
 
                         </div>
 
+                        <h3 className="space-y-6 my-3 text-primary font-semibold"> Connect With Me </h3>
+
+                        <div className="grid grid-cols-2 justify-around">
+                            <div className="my-5">
+                                <a href="https://www.linkedin.com/in/tim-pamplin-28b60332b/" className="hover:text-primary" target="_blank">
+                                    <Linkedin className="h-6 m-auto w-6 text-primary" />
+                                    <h4 className="font-semibold">Linkedin</h4>
+                                </a>
+                            </div>
+                            <div className="my-5">                                
+                                <a href="https://github.com/tpamplin"  className="hover:text-primary" target="_blank">
+                                    <Github className="h-6 m-auto w-6 text-primary" />
+                                    <h4 className="font-semibold">Github</h4>
+                                </a>
+                            </div>
+
+                        </div>
+
+
+
                     </div>
 
 
-                    <div className="pt-8">
-                        <div className="space-y-6 mx-16 bg-primary/10 rounded-[8px] justify-around">
-                            <h4 className="space-y-6 my-3 text-primary font-semibold"> Connect With Me </h4>
+                    <div className="space-y-6 md:mx-8 bg-primary/10 rounded-[8px] justify-around">
+                        <h3 className="space-y-6 my-3 text-primary font-semibold"> Send Me A Message </h3>
 
-                            <div className="flex space-x mx-auto ">
-                                <a href=""><Linkedin /></a>
-
+                        <form className="space-y-6">
+                            <div className="mx-4">
+                                <label htmlFor="name" className="block text-sm font-medium mb-2"> {" "}Your Name</label>
+                                <input 
+                                    type="text" 
+                                    id="name"
+                                    name="name"
+                                    required
+                                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+                                    placeholder="John Smith..."
+                                />                        
                             </div>
-                        </div>
+
+                            <div className="mx-4">
+                                <label htmlFor="name" className="block text-sm font-medium mb-2"> {" "}Your Name</label>
+                                <input 
+                                    type="text" 
+                                    id="name"
+                                    name="name"
+                                    required
+                                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+                                    placeholder="John Smith..."
+                                />                        
+                            </div>
+
+                            <div className="mx-4">
+                                <label htmlFor="name" className="block text-sm font-medium mb-2"> {" "}Your Name</label>
+                                <input 
+                                    type="text" 
+                                    id="name"
+                                    name="name"
+                                    required
+                                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+                                    placeholder="John Smith..."
+                                />                        
+                            </div>
+                        </form>
+
                     </div>
 
 
