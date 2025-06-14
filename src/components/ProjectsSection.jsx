@@ -72,6 +72,15 @@ const projects = [
 ]
 
 export const ProjectsSection = () => {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        setTimeout(() => {
+
+        }, 1500)
+    }
+
     return (
         <section id="projects" className="py-24 px-4 relative">
             <div className="container mx-auto max-w-5xl">
@@ -108,14 +117,14 @@ export const ProjectsSection = () => {
                                 <div>
                                     <p className="text-primary">View</p>
                                     <a href={project.link} className="center-content">
-                                        <Eye className="h-6 w-6 mx-auto mb-2 text-primary hover:text-blue-900"/>
+                                        <Eye className="h-6 w-6 mx-auto mb-2 text-primary hover:text-primary/70"/>
                                     </a>
                                 </div>
 
                                 <div>
                                     <p className="text-primary">Github</p>
                                     <a href={project.repoLink}>
-                                        <Github className="h-6 w-6 mx-auto mb-2 text-primary hover:text-blue-900"/>
+                                        <Github className="h-6 w-6 mx-auto mb-2 text-primary hover:text-primary/70"/>
                                     </a>
                                 </div> 
                                 
@@ -123,7 +132,7 @@ export const ProjectsSection = () => {
                                     <div>
                                         <p className="text-primary">Case Study</p>
                                         <a download href={project.caseStudyLink}>
-                                            <ArrowDownToLine className="h-6 w-6 mb-2 mx-auto text-primary hover:text-blue-900"/>
+                                            <ArrowDownToLine className="h-6 w-6 mb-2 mx-auto text-primary hover:text-primary/70"/>
                                         </a>
                                     </div>
                                 ) : null}

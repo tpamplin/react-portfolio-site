@@ -1,4 +1,5 @@
-import { Mail, MapPin, Phone, Linkedin, Github } from "lucide-react"
+import { Mail, MapPin, Phone, Linkedin, Github, Send } from "lucide-react"
+import { cn } from "@/lib/utils";
 
 export const ContactSection = () => {
 
@@ -92,28 +93,29 @@ export const ContactSection = () => {
                             </div>
 
                             <div className="mx-4">
-                                <label htmlFor="name" className="block text-sm font-medium mb-2"> {" "}Your Name</label>
+                                <label htmlFor="email" className="block text-sm font-medium mb-2"> {" "}Your Email</label>
                                 <input 
                                     type="text" 
-                                    id="name"
-                                    name="name"
+                                    id="email"
+                                    name="email"
                                     required
                                     className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                                    placeholder="John Smith..."
+                                    placeholder="johnsmith@mail.com"
                                 />                        
                             </div>
 
-                            <div className="mx-4">
-                                <label htmlFor="name" className="block text-sm font-medium mb-2"> {" "}Your Name</label>
-                                <input 
-                                    type="text" 
-                                    id="name"
-                                    name="name"
+                            <div className="mx-4 mb-2">
+                                <label htmlFor="message" className="block text-sm font-medium mb-2"> {" "}Your Message</label>
+                                <textarea 
+                                    id="message"
+                                    name="message"
                                     required
-                                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                                    placeholder="John Smith..."
+                                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
+                                    placeholder="Lorem ipsum..."
                                 />                        
                             </div>
+
+                            <button type="submit" className={cn("cosmic-button items-center flex m-auto mb-2 gap-2 justify-center")}> Send </button>
                         </form>
 
                     </div>
