@@ -191,7 +191,7 @@ export const ProjectsSection = () => {
             </div>
 
 
-            <div className={cn("fixed inset-0 bg-background/95 backdrop-blur-md w-100% h-100% z-30 flex flex-col items-center justify-center",
+            {/* <div className={cn("fixed inset-0 bg-background/95 backdrop-blur-md w-100% h-100% z-30 flex flex-col items-center justify-center",
                 "transition-all duration-300",
                 modalOpen ? "fixed opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
             )}>
@@ -244,7 +244,7 @@ export const ProjectsSection = () => {
 
                 </div>
 
-            </div>
+            </div> */}
 
 
 
