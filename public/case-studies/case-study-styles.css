@@ -1,4 +1,3 @@
-@import "tailwindcss";
 
 * {
     box-sizing:border-box;
@@ -7,12 +6,14 @@
 body {
     display:flex;
     flex-direction:column;
-    background-color: beige;
+    background-color:#79a1e0;
+
 }
 
 p {
     margin: auto;
     max-width: 450px;
+    padding:5px;
 }
 
 .main-content {
@@ -30,7 +31,8 @@ p {
     text-align:center;
     margin: auto;
     width: 90%;
-    border: 2px solid purple
+    border: 2px solid rebeccapurple;
+    background-color: beige;
 }
 
 .return-button-section {
@@ -51,21 +53,53 @@ p {
     font-weight: 1000;
 }
 
-.grid-rows{
-    display:grid;
+.grid-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.two-wide-grid-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.tools {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 0;
+}
+
+.tools-title {
+    margin-bottom:0;
+}
+
+@media (max-width: 480px ) {
+    .grid-section{
+        grid-template-columns: 1fr;
+    }
+
+    .two-wide-grid-section {
+        display: grid;
+        grid-template-columns: 1fr;
+    }   
+}
+
+.grid-unit {
+    border: 1px dotted rebeccapurple;
+    margin: 5px;
 }
 
 .image {
     width: 450px;
     max-width: 98%;
-    border: 2px solid purple;
+    border: 2px solid rebeccapurple;
 }
 
 .button {
     margin:20px;
-    background-color:grey;
+    background-color:lightgray;
     border: 1px solid black;
-    border-radius: 20%;
+    border-radius: 10px;
     padding: 5px;
     margin: 20px;
     color:black;
@@ -73,5 +107,5 @@ p {
 }
 
 .button:hover {
-    background-color: lightgray;
+    background-color: gray;
 }

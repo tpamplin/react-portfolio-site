@@ -54,8 +54,8 @@
             <h2>The Process</h2>
 
             <div>
-                <div class="grid-rows">
-                    <div>
+                <div class="grid-section">
+                    <div class="grid-unit">
                         <h4>Time:</h4>
                         <p>
                             This project took me several months to complete, to my surprise, the
@@ -66,7 +66,7 @@
                         </p>
                     </div>
                     
-                    <div>
+                    <div class="grid-unit">
                         <h4>Credits:</h4>
                         <p>    
                             <span class="bold">Lead Developer/Designer: </span>Timothy Pamplin <br>
@@ -75,19 +75,30 @@
                         </p>
                     </div>
                     
-                    <div>
-                        <h4>Tools</h4>
-                        <ul class="items-list">
-                            <li>MongoDB Atlas</li>
-                            <li>Heroku</li>
-                            <li>Netlify</li>
-                            <li>VSCode</li>
-                            <li>React-Bootstrap</li>
-                            <li>Express</li>
-                            <li>Node.JS</li>
-                            <li>Postman</li>
-                            <li>Git/Github</li>
-                        </ul>
+                    <div class="grid-unit">
+                        <h4 class="tools-title">Tools</h4>
+                        <div class="tools">
+                            <div>
+                                <ul class="items-list">
+                                    <li>MongoDB Atlas</li>
+                                    <li>Heroku</li>
+                                    <li>Netlify</li>
+                                    <li>VSCode</li>
+                                    <li>React-Bootstrap</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="items-list">
+                                    <li>Express</li>
+                                    <li>Node.JS</li>
+                                    <li>Postman</li>
+                                    <li>Git</li>
+                                    <li>Github</li>
+                                </ul>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
                 <div>
@@ -107,8 +118,8 @@
                     </p>
                 </div>
 
-                <div>
-                    <div>
+                <div class="grid-section">
+                    <div class="grid-unit">
                         <h4>Step 1: The Database</h4>
                         <p>
                             Due to the nature of the data I was dealing
@@ -123,7 +134,7 @@
                         </p>
                     </div>
                     
-                    <div>
+                    <div class="grid-unit">
                         <h4>Step 2: The Server</h4>
                         <p>
                             Now that I had a functioning database, I
@@ -139,7 +150,7 @@
                         </p>
                     </div>
 
-                    <div>
+                    <div class="grid-unit">
                         <h4>Step 3: Integration</h4>
                         <p>
                             The final step was to actually connect the
@@ -163,8 +174,8 @@
         <div class="section">
             <h2>Testing and Documenting</h2>
 
-            <div>
-                <div>
+            <div class="two-wide-grid-section">
+                <div class="grid-unit">
                     <h4>Testing</h4>
                     <p>
                         Now that I had a complete API, I had to make sure it actually
@@ -177,7 +188,7 @@
                     </p>
                 </div>
 
-                <div>
+                <div class="grid-unit">
                     <h4>Documenting</h4>
                     <p>
                         At this point I had finished the API and confirmed that it was
@@ -191,12 +202,13 @@
                         brief overview of the endpoints and what to expect from them.
                     </p>
                 </div>
-                <div>
-                    <img class="image" src="./img/DocumentationPic.png" alt="a screenshot of the table of contents of the api documentation.">
-
-                </div>
-            
             </div>
+            <div>
+                <img class="image" src="./img/DocumentationPic.png" alt="a screenshot of the table of contents of the api documentation.">
+
+            </div>
+
+
         </div>
 
         <div class="section">
@@ -210,8 +222,8 @@
                     </p>
                 </div>
 
-                <div>
-                    <div>
+                <div class="grid-section">
+                    <div class="grid-unit">
                         <h4>Step 1: The Build</h4>
                         <p>
                             The first step was to figure out what systems
@@ -224,7 +236,7 @@
                         </p>
                     </div>
                     
-                    <div>
+                    <div class="grid-unit">
                         <h4>Step 2: Components</h4>
                         <p>
                             Once I had a blank canvas to start building
@@ -239,7 +251,7 @@
                         </p>
                     </div>
 
-                    <div>
+                    <div class="grid-unit">
                         <h4>Step 3: Styling</h4>
                         <p>
                             Now that I had a functioning web application,
@@ -268,8 +280,8 @@
                     different information. 
                 </p>
             </div>
-            <div>
-                <div>
+            <div class="grid-section">
+                <div class="grid-unit">
                     <div>
                         <h4>No User View</h4>
                         <p>
@@ -282,7 +294,7 @@
                     <img class="image" src="./img/No-User-View.png" alt="A Screenshot of the landing page of the app.">
                 </div>
 
-                <div>
+                <div  class="grid-unit">
                     <div>
                         <h4>Login View</h4>
                         <p>
@@ -295,7 +307,7 @@
                     <img class="image" src="./img/Login-view.png" alt="A screenshot of the login page.">
                 </div>
 
-                <div>
+                <div  class="grid-unit">
                     <div>
                         <h4>Signup View</h4>
                         <p>
@@ -308,7 +320,7 @@
                     <img class="image" src="./img/Sign-Up-View.png" alt="A screenshot of the sign up page">
                 </div>
                 
-                <div>
+                <div  class="grid-unit">
                     <div>
                         <h4>All Movies View</h4>
                         <p>
@@ -321,7 +333,7 @@
                     <img class="image" src="./img/All-movies-view.png" alt="A Screenshot of the landing page of the app.">
                 </div>
 
-                <div>
+                <div  class="grid-unit">
                     <div>
                         <h4>Single Movie View</h4>
                         <p>
@@ -335,7 +347,7 @@
                     <img class="image" src="./img/Single-movie-view.png" alt="A screenshot of the login page.">
                 </div>
 
-                <div>
+                <div  class="grid-unit">
                     <div>
                         <h4>Profile View</h4>
                         <p>
@@ -355,8 +367,8 @@
 
         <div class="section">
             <h2>Conclusion</h2>
-            <div>
-                <div>
+            <div class="two-wide-grid-section">
+                <div class="grid-unit">
                     <h4>How did this project go?</h4>
                     <p>
                         This was easily the most difficult and time consuming project that
@@ -376,9 +388,10 @@
                         result that I produced. If you want to check it out, it is hosted on
                         Netlify
                     </p>
-                    <a href=""></a>
+                    <br>
+                    <a href="https://pamplin-myflix.netlify.app/">View This Project</a>
                 </div>
-                <div>
+                <div class="grid-unit">
                     <h4>What would I add or change?</h4>
                     <p>
                         I was on a bit of a time crunch during this project, so I didn’t get to

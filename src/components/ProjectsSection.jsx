@@ -54,7 +54,7 @@ const projects = [
     },
     {
         title: "Meet App",
-        description: "Shows you different events, you can sort by city and specify the number of events you want to see. Works offline and is downloadable as a proggressive web application. Will also show you charts to plot the data currently shown on screen.",
+        description: "Shows you different events, you can sort by city and specify the number of events you want to see. Works offline and is downloadable as a progressive web application. Will also show you charts to plot the data currently shown on screen.",
         image: "/projects/meet-shot.png",
         tags: ["React", "Vite", "Google Calendar"],
         link: "https://meet-app-jet.vercel.app/",
