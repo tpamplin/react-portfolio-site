@@ -168,7 +168,7 @@ export const ProjectsSection = () => {
                                 </div> 
                                 
                                 {project.caseStudyLink ? (
-                                    <div  onClick={() => openModal(project.caseStudyLink)}>
+                                    <div >
                                         <p className="text-primary">Case Study</p>
                                         <Eye className="h-6 w-6 mb-2 mx-auto text-primary hover:text-primary/70"/>
                                     </div>
