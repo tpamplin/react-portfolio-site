@@ -1,5 +1,14 @@
-import { cn } from "@/lib/utils";
-import { Github, Eye, ArrowDownToLine, SquareArrowOutUpRight} from "lucide-react";
+import { Github, Eye, ArrowDownToLine, SquareArrowOutUpRight, ChevronRight, ChevronLeft} from "lucide-react";
+import { useState } from "react";
+import { cn } from "@/lib/utils"
+import { Document , Page} from "react-pdf";
+
+import { pdfjs } from 'react-pdf';
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url,
+).toString();
 
 const projects = [
     {
@@ -73,6 +82,44 @@ const projects = [
 
 export const ProjectsSection = () => {
 
+    const [modalOpen, setModalOpen] = useState(false);
+    const [pdfUrl, setPdfUrl] = useState("");
+    const [numPages, setNumPages] = useState(1);
+    const [pageNumber, setPageNumber] = useState(1);
+
+    let pdfScale = 1.8;
+
+    if (window.innerWidth < 480) {
+        pdfScale = 0.5
+    }
+        
+
+    const openModal = (url) => {
+        setPdfUrl(url);
+        setModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
+        setPdfUrl("");
+    };
+
+    const onDocumentLoadSuccess = (numPages) => {
+        setNumPages(numPages.numPages)
+        console.log(numPages)
+        setPageNumber(1)
+    }
+
+    const pageUp = () => {
+        setPageNumber(pageNumber + 1);
+        console.log(pageNumber)
+    }
+
+    const pageDown = () => {
+        setPageNumber(pageNumber - 1);
+        console.log(pageNumber)
+    }
+
     return (
         <section id="projects" className="py-24 px-4 relative">
             <div className="container mx-auto max-w-5xl">
@@ -109,7 +156,7 @@ export const ProjectsSection = () => {
                                 <div>
                                     <p className="text-primary">View</p>
                                     <a href={project.link} className="center-content">
-                                        <Eye className="h-6 w-6 mx-auto mb-2 text-primary hover:text-primary/70"/>
+                                        <SquareArrowOutUpRight className="h-6 w-6 mx-auto mb-2 text-primary hover:text-primary/70"/>
                                     </a>
                                 </div>
 
@@ -121,11 +168,9 @@ export const ProjectsSection = () => {
                                 </div> 
                                 
                                 {project.caseStudyLink ? (
-                                    <div>
+                                    <div  onClick={() => openModal(project.caseStudyLink)}>
                                         <p className="text-primary">Case Study</p>
-                                        <a download href={project.caseStudyLink}>
-                                            <ArrowDownToLine className="h-6 w-6 mb-2 mx-auto text-primary hover:text-primary/70"/>
-                                        </a>
+                                        <Eye className="h-6 w-6 mb-2 mx-auto text-primary hover:text-primary/70"/>
                                     </div>
                                 ) : null}
                             </div>
@@ -135,6 +180,7 @@ export const ProjectsSection = () => {
                     ))}
                 </div>
 
+
                 <div className="text-center mt-12 flex justify-around">
                     <a href="https://github.com/tpamplin" target="_blank" className="cosmic-button flex">
                         My Github <SquareArrowOutUpRight  className="h-6 w-6 ml-2"/>
@@ -143,6 +189,65 @@ export const ProjectsSection = () => {
                 </div>
 
             </div>
+
+
+            <div className={cn("fixed inset-0 bg-background/95 backdrop-blur-md w-100% h-100% z-30 flex flex-col items-center justify-center",
+                "transition-all duration-300",
+                modalOpen ? "fixed opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+            )}>
+
+                <div className="flex flex-row space-y-8 px-5 py-2">
+                    
+
+                    <div onClick={pageNumber > 1 ? () => pageDown(): null} className="bg-primary/20 flex mx-2 hover:bg-primary-40">
+                        <ChevronLeft className="my-auto" />
+                    </div>
+                    
+                    <Document file={pdfUrl} onLoadSuccess={onDocumentLoadSuccess}>
+                        <Page scale={pdfScale} pageNumber={pageNumber} renderAnnotationLayer={false} renderTextLayer={false}></Page>
+                    </Document>
+                
+
+                    <div onClick={pageNumber < numPages ? () => pageUp() : null} className="bg-primary/20 mb-8 mx-2 flex hover:bg-primary-40">
+                        <ChevronRight className="my-auto" />
+                    </div>
+                
+                </div>
+
+                <div className="flex flex-row justify-around space-x-8">
+
+                    <div className="flex flex-row space-y-16 px-5 py-2 bg-primary/20 hover:bg-primary/40 rounded-full text-xl">
+                            <a
+                                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                                onClick={() => closeModal()}
+                            >
+                                Close
+                            </a>
+
+
+
+                    </div>
+
+
+                    <div className="flex flex-row space-y-16 px-5 py-2 bg-primary/20 hover:bg-primary/40 rounded-full text-xl">
+
+
+                            <a
+                                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                                href={pdfUrl}
+                                download
+                            >
+                                Download PDF
+                            </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
         </section>
     );
 }

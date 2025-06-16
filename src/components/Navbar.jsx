@@ -28,7 +28,7 @@ export const Navbar = () => {
 
 
     return (
-        <nav className={cn("fixed w-full z-40 transition-all duration-300 px-10", 
+        <nav className={cn("fixed w-full z-40 transition-all  md:bg-background/80 duration-300 px-10", 
             isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
         )}>
             <div className=" container flex md:grid md:grid-cols-4 items-center justify-between">
@@ -63,7 +63,7 @@ export const Navbar = () => {
                 {/* mobile navigation */}
 
                 <a href="#hero" className="md:hidden text-xl font-bold text-primary absolute left-1/2 transform -translate-x-1/2 top-5">
-                    <span className="relative z-10 ">
+                    <span className="relative z-10">
                         <span className="text-glow text-foreground">Tim's </span> {" "} Portfolio
                     </span>
                 </a>
