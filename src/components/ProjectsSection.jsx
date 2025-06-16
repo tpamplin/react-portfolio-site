@@ -68,7 +68,7 @@ const projects = [
         tags: ["React Native", "Gifted Chat", "Expo"],
         link: "https://youtube.com/shorts/hmha4A-y1c0",
         repoLink: "https://github.com/tpamplin/chat",
-        caseStudyLink: ""
+        caseStudyLink: "http://www.timpamplin.com/case-studies/chat.html"
     },
     {
         title: "Angular MyFlix Client",
