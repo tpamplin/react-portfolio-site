@@ -59,7 +59,7 @@ const projects = [
         tags: ["React", "Vite", "Google Calendar"],
         link: "https://meet-app-jet.vercel.app/",
         repoLink: "https://github.com/tpamplin/meet-app",
-        caseStudyLink: ""
+        caseStudyLink: "http://www.timpamplin.com/case-studies/meet.html"
     },
     {
         title: "Chat App",

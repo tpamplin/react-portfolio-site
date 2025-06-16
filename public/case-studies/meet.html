@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet App Case Study</title>
+    <link rel="stylesheet" href="./case-study-styles.css">
+</head>
+<body>
+
+    <div class="main-content">
+
+        <div class="return-button-section">
+            <a class="button" href="http://www.timpamplin.com/">Back To Main Site</a>
+        </div>
+
+        <div class="page-header">
+            <h1 class="page-title">Meet Application Case Study</h1>
+            <h3>View Coding Events from around the world!</h3>
+            <p>
+                Meet is a web application built with React, Google Firebase Authentication, and the Google Calendar API. 
+                It allows users to browse and discover coding events happening in different cities around the world. 
+                Users can filter events by city, authenticate securely, and view detailed information about each event. 
+                The app also provides interactive graphs to visualize event data, such as the number of events per city or the distribution of event types.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Why Build This Project? </h2>
+
+            <p>
+                I created this project as part of the Full Stack Immersion course at
+                CareerFoundry. The purpose of this app was to demonstrate my ability to
+                use the React framework, as well as recieving information from APIs.
+                During the development of this app I dove deep into many web development
+                fundamentals, such as:
+            </p>
+
+            <ul class="items-list">
+                <li>React</li>
+                <li>Google Firebase</li>
+                <li>Google Calendar API</li>
+                <li>Vite</li>
+                <li>Recharts</li>
+                <li>Jest-cucumber</li>
+            </ul>
+
+        </div>
+
+        <div class="section">
+            <h2>The Process</h2>
+
+            <div>
+                <div class="grid-section">
+                    <div class="grid-unit">
+                        <h4>Time:</h4>
+                        <p>
+                            This project took me several months to complete, to my surprise, the
+                            API was the easy part. Setting up the database and Express server was
+                            fairly straightforward, and did not take that much time. Getting the front
+                            end to look and act the way I wanted was much harder and took up the
+                            bulk of the time. 
+                        </p>
+                    </div>
+                    
+                    <div class="grid-unit">
+                        <h4>Credits:</h4>
+                        <p>    
+                            <span class="bold">Lead Developer/Designer: </span>Timothy Pamplin <br>
+                            <span class="bold">Tutor:</span> Matthew Henderson <br>
+                            <span class="bold">Mentor: </span>Drew Mercer
+                        </p>
+                    </div>
+                    
+                    <div class="grid-unit">
+                        <h4 class="tools-title">Tools</h4>
+                        <div class="tools">
+                            <div>
+                                <ul class="items-list">
+                                    <li>Google Firebase</li>
+                                    <li>Vercel</li>
+                                    <li>VSCode</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="items-list">
+                                    <li>Node.JS</li>
+                                    <li>Git</li>
+                                    <li>Github</li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div>
+                    <img class="image" src="./img/DevelopmentChaos.png" alt="a screenshot of all the windows I needed to build this project">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>The Build</h2>
+            <div>
+                <div>
+                    <p>
+                        Before diving into building the user interface, I focused on quickly deploying the backend to ensure 
+                        a solid foundation for the application. Once the backend was up and running, I shifted my attention 
+                        to building the front end using React. This allowed me to create an interactive and responsive user 
+                        experience that communicates seamlessly with the back end. The following steps outline how I 
+                        approached and completed both the backend deployment and the front end development process.
+                    </p>
+                </div>
+
+                <div class="grid-section">
+                    <div class="grid-unit">
+                        <h4>Step 1: Firebase</h4>
+                        <p>
+                            To handle authentication securely and efficiently, I chose Firebase Authentication. 
+                            Setting up Firebase allowed me to quickly implement user sign-up, login, and authentication 
+                            flows without building a custom solution from scratch. With Firebase, I could easily manage 
+                            user accounts, handle password resets, and ensure secure access to the application. This 
+                            foundation made it much easier to focus on building out the rest of the project, knowing that 
+                            authentication was robust and scalable.
+                        </p>
+                    </div>
+                    
+                    <div class="grid-unit">
+                        <h4>Step 2: User Interface</h4>
+                        <p>
+                            With the backend in place, I used React to build a responsive and interactive front end. 
+                            React’s component-based architecture allowed me to efficiently create reusable UI elements 
+                            and organize the user interface. I focused on making the app easy to use and ensuring it 
+                            looked good on both desktop and mobile devices. This approach made it straightforward to 
+                            update and improve the UI as the project progressed. Additionally, I integrated the Google Calendar API 
+                            to fetch and display (fake) real-time coding events from around the world, allowing users to browse, filter, 
+                            and view detailed event information directly within the app.
+                        </p>
+                    </div>
+
+                    <div class="grid-unit">
+                        <h4>Step 3: Charts and Styling</h4>
+                        <p>
+                            In the final step, I focused on styling the application and integrating data visualization. 
+                            I used CSS to create a clean look that works well on both desktop and mobile devices. 
+                            For data visualization, I implemented interactive charts using the Recharts library. 
+                            These charts display useful insights, such as the number of events per city and the distribution 
+                            of event types, making the data more engaging and easier to understand for users. This combination 
+                            of thoughtful styling and dynamic charts helped bring the application to life and provided a polished 
+                            user experience.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Testing</h2>
+
+            <p>
+                To ensure the Meet application worked as expected, I used Jest and Cucumber for testing. I wrote behavior-driven tests using Gherkin syntax to describe user interactions and application features. These tests helped verify that key functionalities—such as event filtering, authentication, and data visualization—performed correctly. Automated testing with Jest-Cucumber allowed me to catch bugs early and maintain confidence as I added new features.
+            </p>
+            <img class="image" src="./img/DocumentationPic.png" alt="a screenshot of the table of contents of the api documentation.">
+        </div>
+
+        <div class="section">
+            <div>
+                <h2>Final Product!</h2>
+                <p>
+                    The final Meet application is a single-page web app that brings together all core features in one seamless experience. Users can browse and filter coding events by city, view event details, and interact with dynamic charts—all without navigating away or reloading the page. The intuitive interface, responsive design, and real-time data updates make it easy for users to discover and explore events from anywhere in the world.
+                </p>
+            </div>
+            
+            <img class="image" src="./img/DocumentationPic.png" alt="A screenshot of the meet application.">
+        </div>
+
+        <div class="section">
+            <h2>Conclusion</h2>
+            <div class="two-wide-grid-section">
+                <div class="grid-unit">
+                    <h4>How did this project go?</h4>
+                    <p>
+                        This was easily the most difficult and time consuming project that
+                        I worked on during the Full Stack Immersion course at Career
+                        Foundry. This was probably one of the most difficult projects I’ve
+                        ever worked on. It was difficult for me to find adequate time to
+                        work on it, as I was working full time, and trying to make time for
+                        my family. I would sit down at my desk, and by the time I had
+                        figured out where I was and what I was working on, I had already
+                        run out of time. Ultimately, I just ended up sacrificing my sleep
+                        schedule, and staying up until two or three o’clock in the morning
+                        to work on this. I also spent ages trying to fix a bug in my front end
+                        that ended up actually being an issue with how my back end was
+                        handling the request. I had to get help from several different
+                        people before I was able to get that working. Overall, however, this
+                        was a very fulfilling project to work on, and I am proud of the final
+                        result that I produced. If you want to check it out, it is hosted on
+                        Netlify
+                    </p>
+                    <br>
+                    <a href="https://pamplin-myflix.netlify.app/">View This Project</a>
+                </div>
+                <div class="grid-unit">
+                    <h4>What would I add or change?</h4>
+                    <p>
+                        I was on a bit of a time crunch during this project, so I didn’t get to
+                        do everything that I wanted to. I always wanted to add more than
+                        ten movies to the database, or even better, I wanted to add the
+                        ability for a user to add a movie to the list; I even considered
+                        creating a second application specifically for reviewing movie
+                        submissions before they were shown on the main site. I could
+                        have spent a lifetime on styling and layout, but I had to move on to
+                        other projects in order to complete my course on time. This
+                        version of the app does not have the ability to view more
+                        information about the director or genre, even though that
+                        information is available in the database, so I would have liked to
+                        implement a pop up when you click on the director or genre that
+                        gives you that information. Other than that, I don’t think there was much I would change
+                        about this project.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="return-button-section">
+            <a class="button" href="http://www.timpamplin.com/">Back To Main Site</a>
+            <a class="button" href="/case-studies/myflix-case-study.pdf">PDF Version</a>
+        </div>
+
+    </div>
+</body>
+</html>
