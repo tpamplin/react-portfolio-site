@@ -50,7 +50,7 @@ const projects = [
         tags: ["React", "React-Bootstrap", "Parcel"],
         link: "https://pamplin-myflix.netlify.app/",
         repoLink: "https://github.com/tpamplin/MyFlix-Client",
-        caseStudyLink: "/myflix-case-study.pdf"
+        caseStudyLink: "http://www.timpamplin.com/case-studies/myflix.html"
     },
     {
         title: "Meet App",
@@ -168,10 +168,10 @@ export const ProjectsSection = () => {
                                 </div> 
                                 
                                 {project.caseStudyLink ? (
-                                    <div >
+                                    <a href={project.caseStudyLink}>
                                         <p className="text-primary">Case Study</p>
                                         <Eye className="h-6 w-6 mb-2 mx-auto text-primary hover:text-primary/70"/>
-                                    </div>
+                                    </a>
                                 ) : null}
                             </div>
 

@@ -91,7 +91,7 @@ export const ContactSection = () => {
 
                         <div className="grid grid-cols-2 justify-around">
                             <div className="my-5">
-                                <a href="https://www.linkedin.com/in/tim-pamplin-28b60332b/" className="hover:text-primary" target="_blank">
+                                <a href="https://www.linkedin.com/in/tim-pamplin/" className="hover:text-primary" target="_blank">
                                     <Linkedin className="h-6 m-auto w-6 text-primary" />
                                     <h4 className="font-semibold">Linkedin</h4>
                                 </a>
